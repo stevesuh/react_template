@@ -4,6 +4,4 @@ orbs:
 workflows:
   node-tests:
     jobs:
-      - node/test:
-          #app-dir: '~/project/sample-app'
-
+      - node/test
