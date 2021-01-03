@@ -5,4 +5,5 @@ workflows:
   node-tests:
     jobs:
       - node/test:
-          app-dir: ~/react_template/sample-app
+          parameters:
+            app-dir: ~/project/sample-app
