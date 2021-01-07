@@ -6,4 +6,4 @@ workflows:
     jobs:
       - node/test:
           app-dir: "~/project/sample-app"
-          version: "15.5.0"
+          version: "15.5.1"
