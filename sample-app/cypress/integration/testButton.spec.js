@@ -8,7 +8,7 @@ context('Actions', () => {
   // https://on.cypress.io/interacting-with-elements
 
   it('.click() - click on a DOM element', () => {
-    // https://on.cypress.io/click
+    https://testing-library.com/docs/cypress-testing-library/intro/#examples
     cy.findByRole('button', { name: /Hello World/i }).click()
   })
 })

@@ -1,9 +1,21 @@
 version: 2.1
 orbs:
   node: circleci/node@4.1.0
+  cypress: cypress-io/cypress@1.26.0
 workflows:
   node-tests:
     jobs:
       - node/test:
           app-dir: "~/project/sample-app"
           version: "15.5.1"
+      - cypress/install:
+          # https://github.com/cypress-io/circleci-orb/issues/315
+          build: cd ~/project/sample-app && npm run build
+          working_directory: "~/project/sample-app"
+      - cypress/run:
+          requires:
+            - cypress/install
+          start: npm start
+          wait-on: 'http://localhost:3000'
+          executor: cypress/base-14
+          working_directory: "~/project/sample-app"
