@@ -1,9 +1,12 @@
 version: 2.1
 orbs:
   node: circleci/node@4.1.0
+  cypress: cypress-io/cypress@1.26.0
 workflows:
   node-tests:
     jobs:
       - node/test:
           app-dir: "~/project/sample-app"
           version: "15.5.1"
+      - cypress/run:
+          working_directory: ~/project/sample-app
