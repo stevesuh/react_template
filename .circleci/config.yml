@@ -10,11 +10,11 @@ workflows:
           version: "15.5.1"
       - cypress/install:
           build: npm run build
-          working_directory: "~/project/sample-app"
+          working_directory: "sample-app"
       - cypress/run:
           requires:
             - cypress/install
           start: npm start
           wait-on: 'http://localhost:3000'
           executor: cypress/base-14
-          working_directory: "~/project/sample-app"
+          working_directory: "sample-app"
