@@ -11,6 +11,7 @@ workflows:
       - cypress/install:
           # https://github.com/cypress-io/circleci-orb/issues/315
           build: cd ~/project/sample-app && npm run build
+          install-command: cd ~/project/sample-app && npm ci
           working_directory: "~/project/sample-app"
       - cypress/run:
           requires:
