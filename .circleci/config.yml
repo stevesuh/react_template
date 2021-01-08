@@ -9,4 +9,7 @@ workflows:
           app-dir: "~/project/sample-app"
           version: "15.5.1"
       - cypress/run:
+          start: npm start
+          wait-on: 'http://localhost:3000'
+          executor: cypress/base-14
           working_directory: ~/project/sample-app
