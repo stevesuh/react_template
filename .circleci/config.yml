@@ -8,7 +8,11 @@ workflows:
       - node/test:
           app-dir: "~/project/sample-app"
           version: "15.5.1"
+      - cypress/install:
+          build: npm run build
       - cypress/run:
+          requires:
+            - cypress/install
           start: npm start
           wait-on: 'http://localhost:3000'
           executor: cypress/base-14
