@@ -10,6 +10,7 @@ workflows:
           version: "15.5.1"
       - cypress/install:
           build: npm run build
+          working_directory: ~/project/sample-app
       - cypress/run:
           requires:
             - cypress/install
