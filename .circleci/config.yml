@@ -9,6 +9,8 @@ workflows:
           app-dir: "~/project/sample-app"
           version: "15.5.1"
       - cypress/install:
+          requires:
+            - node/test
           # https://github.com/cypress-io/circleci-orb/issues/315
           build: cd ~/project/sample-app && npm run build
           working_directory: "~/project/sample-app"
